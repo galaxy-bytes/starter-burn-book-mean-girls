@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@web5/api": "^0.8.2",
+    "@web5/api": "^0.9.4",
     "crypto-browserify": "^3.12.0",
     "next": "14.0.3",
     "process": "^0.11.10",

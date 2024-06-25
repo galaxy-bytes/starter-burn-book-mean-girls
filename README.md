@@ -66,7 +66,7 @@ console.log('this is where we define our protocol')
 
 And replace it with the following code snippet:
 ```javascript
-    return {
+  return {
       protocol: "https://blackgirlbytes.dev/burn-book-finale",
       published: true,
       types: {
@@ -82,15 +82,15 @@ And replace it with the following code snippet:
       structure: {
         secretMessage: {
           $actions: [
-            { who: "anyone", can: "write" },
-            { who: "author", of: "secretMessage", can: "read" },
+            { who: "anyone", can: ["create"] },
+            { who: "author", of: "secretMessage", can: ["read"] },
           ],
         },
         directMessage: {
           $actions: [
-            { who: "author", of: "directMessage", can: "read" },
-            { who: "recipient", of: "directMessage", can: "read" },
-            { who: "anyone", can: "write" },
+            { who: "author", of: "directMessage", can: ["read"] },
+            { who: "recipient", of: "directMessage", can: ["read"] },
+            { who: "anyone", can: ["create"] },
           ],
         },
       },
