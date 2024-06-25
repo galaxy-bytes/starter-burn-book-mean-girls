@@ -1,20 +1,22 @@
-const webpack = require('webpack');
+import webpack from 'webpack';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
 
-  webpack: (config, { isServer, buildId, dev, webpack }) => {
+  webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
-        stream: require.resolve('stream-browserify'),
-        crypto: require.resolve('crypto-browserify'),
+        stream: 'stream-browserify',
+        crypto: 'crypto-browserify',
+        buffer: 'buffer',
       };
 
       config.plugins.push(
         new webpack.ProvidePlugin({
           process: 'process/browser',
+          Buffer: ['buffer', 'Buffer'],
         }),
         new webpack.NormalModuleReplacementPlugin(
           /node:crypto/,
@@ -28,4 +30,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

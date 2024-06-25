@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@web5/api": "^0.9.4",
+    "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
     "next": "14.0.3",
     "process": "^0.11.10",
     "react": "^18",
     "react-dom": "^18",
-    "stream-browserify": "^3.0.0"
+    "stream-browserify": "^3.0.0",
+    "webpack": "^5.92.1"
   }
 }
